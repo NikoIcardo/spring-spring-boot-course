@@ -5,7 +5,7 @@ import com.in28minutes.learnspringframework.game.MarioGame;
 import com.in28minutes.learnspringframework.game.PacManGame;
 import com.in28minutes.learnspringframework.game.SuperContraGame;
 
-public class AppGamingBasicJava {
+public class App01GamingBasicJava {
 
 	public static void main(String[] args) {
 
@@ -15,5 +15,4 @@ public class AppGamingBasicJava {
 		var gameRunner = new GameRunner(game2); 
 		gameRunner.run(); 
 	}
-
 }
