@@ -1,5 +1,8 @@
 package com.in28minutes.learnspringframework;
 
+import java.util.Arrays;
+import java.util.function.Consumer;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.in28minutes.learnspringframework.game.GameRunner;
@@ -9,8 +12,11 @@ import com.in28minutes.learnspringframework.game.SuperContraGame;
 
 public class App02HelloWorldSpring {
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
-		/*
+		/* 
 		 * Spring Steps
 		 * 1. Launch Spring Context -
 		 * 2. Configure the things we want spring to manage - @Configuration
@@ -33,7 +39,19 @@ public class App02HelloWorldSpring {
 		System.out.println(context.getBean("address2"));
 		
 		System.out.println(context.getBean(Address.class));
+		
+		System.out.println(context.getBean(Person.class));
+		
+		System.out.println(context.getBean("person5Qaulifier"));
+		
+		
+		// list all spring beans 
+		// Package java.util.function  to get Consumer types for lambda functions
+		Consumer<String> printName = str -> System.out.println(str); 
+		
+		Arrays.stream(context.getBeanDefinitionNames()).forEach(printName);
 	}
+	
 
 }
  
